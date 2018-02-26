@@ -1,6 +1,6 @@
 header.text-center
   .ribbon
-    a href="https://ellaism.org/" Learn More
+    a href="https://ellaism.org/" Explore Ellaism
   .container
     a href='http://ex.egem.io/'
       img src='#{image_path '/ella-logo.png'}' width='336px'
@@ -11,7 +11,7 @@ header.text-center
       - unless current_user
         .col-xs-4.col-xs-offset-8
           a href="#{signin_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.signin")
-        
+
         .col-xs-4
           a href="#{signup_path}" class="btn btn-primary btn-lg btn-block" role="button" = t("header.signup")
       - else
