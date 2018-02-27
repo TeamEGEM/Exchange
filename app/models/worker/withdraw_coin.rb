@@ -19,8 +19,8 @@ module Worker
         withdraw = Withdraw.lock.find payload[:id]
 
         return unless withdraw.almost_done?
-        if withdraw.currency == 'eth'
-          balance = open('http://your_geth_server_ip/cgi-bin/total.cgi').read.rstrip.to_f
+        if withdraw.currency == 'ella'
+          balance = open('http://18.219.36.246/cgi-bin/total.cgi').read.rstrip.to_f
           raise Account::BalanceError, 'Insufficient coins' if balance < withdraw.sum
 
           fee = [withdraw.fee.to_f || withdraw.channel.try(:fee) || 0.0005, 0.1].min
