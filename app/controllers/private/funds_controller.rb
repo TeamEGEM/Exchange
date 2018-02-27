@@ -3,7 +3,7 @@ module Private
     layout 'funds'
 
     before_action :auth_activated!
-    #before_action :auth_verified!
+    #before_action :auth_verified! removed auth verified to access funds controller for non KYC customers (jal3inc)
     before_action :two_factor_activated!
 
     def index
